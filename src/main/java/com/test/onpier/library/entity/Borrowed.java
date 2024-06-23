@@ -20,8 +20,10 @@ public class Borrowed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //improvement make manyToOne Association
     //private User borrower;
     private String borrower;
+    //improvement make manyToOne Association
     //private Book book;
     private String book;
     private LocalDate borrowedFrom;

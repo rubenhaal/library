@@ -19,4 +19,5 @@ public class UserService {
     public List<LibraryUser> getUsersWithAtLeastOneBookBorrowed(){
         return userRepository.findUsersThatHaveBorrowedBooks();
     }
+
 }

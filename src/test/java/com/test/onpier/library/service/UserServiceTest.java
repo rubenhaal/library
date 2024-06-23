@@ -1,11 +1,10 @@
-package com.test.onpier.library.services;
+package com.test.onpier.library.service;
 
 
 import com.test.onpier.library.entity.Borrowed;
 import com.test.onpier.library.entity.LibraryUser;
 import com.test.onpier.library.repositories.BorrowedRepository;
 import com.test.onpier.library.repositories.UserRepository;
-import com.test.onpier.library.service.UserService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -71,16 +70,12 @@ class UserServiceTest {
     }
 
     @Test
-    void shouldReturnAllUsers_whenDoesAtLeastOneBookBorrowed(){
-
-
-        //given
+    void shouldReturnAllUsersThathaveAtLEastOneBookBorrowed(){
 
         //When
         List<LibraryUser> usersWithAtLeastOneBookBorrowed = userService.getUsersWithAtLeastOneBookBorrowed();
         assertEquals(1, usersWithAtLeastOneBookBorrowed.size());
 
-        //then
     }
 
 }
