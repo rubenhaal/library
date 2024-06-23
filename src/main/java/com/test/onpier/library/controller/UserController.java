@@ -33,8 +33,6 @@ public class UserController {
     @GetMapping(value = "/notTerminatedUserWithoutBorrowedBooks")
     public List<LibraryUser> getNonTerminatedUserWithoutBorrowedBooks() {
         log.debug("notTerminatedUserWithoutBorrowedBooks endpoint");
-        return userService.getAllUsers();
+        return userService.getActiveUsersWithoutBorrowedBooks();
     }
-
-
 }

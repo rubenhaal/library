@@ -20,4 +20,7 @@ public class UserService {
         return userRepository.findUsersThatHaveBorrowedBooks();
     }
 
+    public List<LibraryUser> getActiveUsersWithoutBorrowedBooks(){
+        return userRepository.findActiveUsersWithoutBorrowedBooks();
+    }
 }

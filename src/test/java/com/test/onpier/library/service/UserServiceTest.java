@@ -34,7 +34,7 @@ class UserServiceTest {
         userRepository.flush();
         borrowedRepository.deleteAll();
         borrowedRepository.flush();
-
+        //Active Users
         LibraryUser user1= LibraryUser.builder()
                 .firstName("name1")
                 .name("name1")
@@ -48,34 +48,65 @@ class UserServiceTest {
                 .firstName("name2")
                 .name("name2")
                 .memberSince(LocalDate.now())
-                .memberTill(LocalDate.now())
                 .gender("female")
                 .completeName("name2,name2")
                 .build();
 
         userRepository.save(user2);
 
+        //Deactivate Users
+
+        LibraryUser user3= LibraryUser.builder()
+                .firstName("name3")
+                .name("name3")
+                .memberSince(LocalDate.now().minusYears(5))
+                .gender("male")
+                .completeName("name3,name3")
+                .build();
+        userRepository.save(user3);
+
         Borrowed borrowed = Borrowed.builder()
                 .borrower("name1,name1")
-                .borrowedTo(LocalDate.now())
-                .borrowedFrom(LocalDate.now()).build();
+                .borrowedTo(LocalDate.of(2010,12,2))
+                .borrowedFrom(LocalDate.of(2010,10,2)).build();
         borrowedRepository.save(borrowed);
+
+        Borrowed borrowed1 = Borrowed.builder()
+                .borrower("name1,name1")
+                .borrowedTo(LocalDate.now().plusMonths(2))
+                .borrowedFrom(LocalDate.now()).build();
+        borrowedRepository.save(borrowed1);
+
+        Borrowed borrowed2 = Borrowed.builder()
+                .borrower("name3,name3")
+                .borrowedTo(LocalDate.of(2010,12,2))
+                .borrowedFrom(LocalDate.of(2010,10,2)).build();
+
+        borrowedRepository.save(borrowed2);
 
     }
 
     @Test
     void shouldReturnAllUsers(){
         List<LibraryUser> usersWithAtLeastOneBookBorrowed = userService.getAllUsers();
-        assertEquals(2, usersWithAtLeastOneBookBorrowed.size());
+        assertEquals(3, usersWithAtLeastOneBookBorrowed.size());
     }
 
     @Test
-    void shouldReturnAllUsersThathaveAtLEastOneBookBorrowed(){
+    void shouldReturnAllUsersThatHaveAtLEastOneBookBorrowed(){
 
         //When
         List<LibraryUser> usersWithAtLeastOneBookBorrowed = userService.getUsersWithAtLeastOneBookBorrowed();
-        assertEquals(1, usersWithAtLeastOneBookBorrowed.size());
+        assertEquals(2, usersWithAtLeastOneBookBorrowed.size());
+        assertEquals("name1,name1", usersWithAtLeastOneBookBorrowed.get(0).getCompleteName());
 
+    }
+
+    @Test
+    void shouldReturnUsers_whenUserAreActiveAndHaveCurrentlyNotBookBorrowed(){
+        List<LibraryUser> usersWithAtLeastOneBookBorrowed = userService.getActiveUsersWithoutBorrowedBooks();
+        assertEquals(1, usersWithAtLeastOneBookBorrowed.size());
+        assertEquals("name3,name3", usersWithAtLeastOneBookBorrowed.get(0).getCompleteName());
     }
 
 }
