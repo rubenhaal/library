@@ -23,6 +23,7 @@ public class LibraryUser {
     private Long id;
     private String name;
     private String firstName;
+    private String completeName;
     private LocalDate memberSince;
     private LocalDate memberTill;
     private String gender;
