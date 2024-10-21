@@ -1,4 +1,4 @@
-package com.test.onpier.library.entity;
+package com.test.library.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,22 +9,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LibraryUser {
 
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String firstName;
-    private String completeName;
-    private LocalDate memberSince;
-    private LocalDate memberTill;
-    private String gender;
+    private String title;
+    private String author;
+    private String genre;
+    private String publisher;
+
 }

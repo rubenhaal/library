@@ -1,4 +1,4 @@
-package com.test.onpier.library.controller;
+package com.test.library.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,7 +1,7 @@
-package com.test.onpier.library.controller;
+package com.test.library.controller;
 
-import com.test.onpier.library.entity.Book;
-import com.test.onpier.library.service.BookService;
+import com.test.library.service.BookService;
+import com.test.library.entity.Book;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.test.onpier.library.exception;
+package com.test.library.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

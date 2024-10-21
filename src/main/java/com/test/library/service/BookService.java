@@ -1,16 +1,16 @@
-package com.test.onpier.library.service;
+package com.test.library.service;
 
-import com.test.onpier.library.entity.Book;
-import com.test.onpier.library.repositories.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.test.library.entity.Book;
+import com.test.library.repositories.BookRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class BookService {
 
-    @Autowired
     private BookRepository bookRepository;
 
 

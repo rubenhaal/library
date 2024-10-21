@@ -1,15 +1,16 @@
-package com.test.onpier.library.service;
+package com.test.library.service;
 
-import com.test.onpier.library.entity.LibraryUser;
-import com.test.onpier.library.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.test.library.entity.LibraryUser;
+import com.test.library.repositories.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class UserService {
-    @Autowired
+
     private UserRepository userRepository;
 
     public List<LibraryUser> getAllUsers(){

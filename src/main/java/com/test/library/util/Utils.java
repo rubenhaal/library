@@ -1,4 +1,4 @@
-package com.test.onpier.library.util;
+package com.test.library.util;
 
 import lombok.experimental.UtilityClass;
 

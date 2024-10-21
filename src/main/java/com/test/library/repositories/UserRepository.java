@@ -1,6 +1,6 @@
-package com.test.onpier.library.repositories;
+package com.test.library.repositories;
 
-import com.test.onpier.library.entity.LibraryUser;
+import com.test.library.entity.LibraryUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

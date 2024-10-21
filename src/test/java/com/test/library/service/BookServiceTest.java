@@ -1,9 +1,9 @@
-package com.test.onpier.library.service;
+package com.test.library.service;
 
-import com.test.onpier.library.entity.Book;
-import com.test.onpier.library.entity.Borrowed;
-import com.test.onpier.library.repositories.BookRepository;
-import com.test.onpier.library.repositories.BorrowedRepository;
+import com.test.library.repositories.BookRepository;
+import com.test.library.repositories.BorrowedRepository;
+import com.test.library.entity.Book;
+import com.test.library.entity.Borrowed;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

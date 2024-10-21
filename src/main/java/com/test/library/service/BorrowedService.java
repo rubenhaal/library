@@ -1,4 +1,4 @@
-package com.test.onpier.library.service;
+package com.test.library.service;
 
 import org.springframework.stereotype.Service;
 

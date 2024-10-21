@@ -1,4 +1,4 @@
-package com.test.onpier.library.entity;
+package com.test.library.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,16 +16,15 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Borrowed {
+public class LibraryUser {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //improvement make manyToOne Association
-    //private User borrower;
-    private String borrower;
-    //improvement make manyToOne Association
-    //private Book book;
-    private String book;
-    private LocalDate borrowedFrom;
-    private LocalDate borrowedTo;
+    private String name;
+    private String firstName;
+    private String completeName;
+    private LocalDate memberSince;
+    private LocalDate memberTill;
+    private String gender;
 }
